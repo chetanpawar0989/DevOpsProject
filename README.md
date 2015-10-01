@@ -1,4 +1,4 @@
 # DevOpsProject
 CSC 591 - DevOps course project
 
-Milestone 1 done
+Milestone 1 done!
