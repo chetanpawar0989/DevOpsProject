@@ -6,7 +6,7 @@
 
 ### Build
 
-### Task 1 - Trigger build in response to git commit
+##### Task 1 - Trigger build in response to git commit
 * Install Git Plugin in jenkins
 * Create build a new job on jenkins. Take care of following parameter
 
@@ -22,10 +22,10 @@
 * Change one of the local file and commit it
 * Go to Jenkins project where it will show new build has been triggered automatically.
 
-### Task 2- Ability to execute a build job via a build manager 
+##### Task 2- Ability to execute a build job via a build manager 
 * We have used maven which takes care of dependency management and running clean build every time. Maven manages dependency by adding packages into pom.xml file in dependencies section. It is also capable performing build and creating package from the source code.
 
-### Task 3: Build Status + External Post-Build Job Triggers
+##### Task 3: Build Status + External Post-Build Job Triggers
 * The build status is displayed in the Jenkins console output.
 * On an unsuccessful and unstable build, we have set up an email trigger using the Email notification option in Jenkins.
 * On a successful build, we executed a script that writes the Build Number, Build Time and the Build Url into a temporary build log file. We used the Post-Build Script Plugin in Jenkins for this. Following are the contents of post-build script.
@@ -36,7 +36,7 @@
 	echo "$BUILDTEXT1$BUILDTEXT2$BUILD_URL\n-----------------------------------\n" >> /tmp/buildLog
 ```
 
-### Task 4: Multiple Branches, Multiple Jobs
+##### Task 4: Multiple Branches, Multiple Jobs
 
 * We are executing each job corresponding to each branch using the git post-commit hook.
 * In the post-commit hook, we wrote a script to get the name of the branch committed and then trigger the build for that particular branch.
@@ -55,12 +55,14 @@
 	echo "Build triggered successfully on branch: $BRANCHNAME"
 
 ```
-### Task 5: Build history
+##### Task 5: Build history
 
 * Jenkins maintains the history of all the builds executed for a job and shows it on its UI.
 * The build history can also be obtained from the available XML or JSON API in Jenkins which contains the urls for all the builds that have been executed for that particular job.
 
-* Currently our project does not have many test cases as we are using a sample maven project with simple 'hello world' program. Screencast of all the steps are explained in this [video](https://youtu.be/piNrxWM9XH8).
+
+### Screencast
+This [screencast](https://youtu.be/piNrxWM9XH8) demonstrates how we achieved above 5 tasks.
 
 
 
